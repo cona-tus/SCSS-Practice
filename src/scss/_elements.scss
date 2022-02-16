@@ -1,39 +1,13 @@
-%fontHeader {
-  font-family: "Cardo", serif;
+%grid {
+  display: grid;
 
-  font-size: 72px;
-
-  line-height: 1.2;
-
-  font-weight: 400;
+  grid-template-columns: 1fr 4fr 6fr 0.3fr;
 }
 
-%fontTitle {
-  font-family: "Cardo", serif;
+%tinyText {
+  font-size: $fontmic;
 
-  font-size: 120px;
+  color: $red;
 
-  line-height: 1.3;
-
-  font-weight: 400;
-}
-
-%fontTiny {
-  font-family: "Montserrat", sans-serif;
-
-  font-size: 15px;
-
-  font-weight: 300;
-
-  line-height: 1.6;
-}
-
-%fontRegular {
-  font-family: "Cardo", serif;
-
-  font-size: 100px;
-
-  font-weight: 400;
-
-  text-align: center;
+  letter-spacing: 1px;
 }
