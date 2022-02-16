@@ -10,86 +10,261 @@ body {
   width: 100vw;
 
   height: 100vh;
-
-  font-family: "Lora", serif;
-
-  padding: 40px;
 }
 
 header {
+  width: 100%;
+
+  background-color: white;
+
+  height: 40px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  position: fixed;
+
+  top: 0;
+
+  left: 0;
+
+  z-index: 1;
+
+  padding: 0 30px;
+
   h1 {
-    line-height: 1.2;
+    @extend %fontLarge;
 
-    font-size: $fontLarge;
+    cursor: pointer;
+  }
 
-    letter-spacing: 1px;
+  nav {
+    ul {
+      display: flex;
 
-    margin-bottom: 175px;
+      li {
+        display: flex;
+
+        align-items: center;
+
+        &:nth-child(1) span {
+          background-color: #e1d3b7;
+        }
+
+        &:nth-child(2) span {
+          background-color: #b96e47;
+        }
+
+        &:nth-child(3) span {
+          background-color: #a9c6b9;
+        }
+
+        &:nth-child(4) span {
+          background-color: #c98347;
+        }
+
+        &:nth-child(5) span {
+          background-color: #6f989d;
+        }
+
+        &:nth-child(6) span {
+          background-color: #d3a745;
+        }
+
+        &:nth-child(7) span {
+          background-color: #adaa76;
+        }
+
+        span {
+          width: 15px;
+
+          height: 15px;
+
+          border-radius: 50%;
+
+          margin-right: 5px;
+        }
+
+        a {
+          @extend %fontMideum;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+
+        &:not(:last-child) {
+          margin-right: 14px;
+        }
+      }
+    }
+  }
+
+  .icon__wrapper i {
+    cursor: pointer;
+
+    font-size: 20px;
+
+    &:not(:last-child) {
+      margin-right: 5px;
+    }
   }
 }
 
 main {
-  margin-bottom: 80px;
+  display: grid;
 
-  .works__header {
-    @extend %grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 
-    @extend %tinyText;
+  grid-auto-rows: 80vh;
 
-    padding-bottom: 15px;
-  }
+  padding-top: 40px;
 
-  .works__list {
-    .work {
-      @extend %grid;
+  .post {
+    display: flex;
 
-      font-size: $fontSm;
+    flex-direction: column;
 
-      padding: 15px 0px;
+    justify-content: space-between;
 
-      border-top: 1px solid $black;
+    padding: 20px;
 
-      &:hover {
-        font-style: italic;
+    cursor: pointer;
+
+    position: relative;
+
+    &:nth-child(1),
+    &:nth-child(8),
+    &:nth-child(11),
+    &:nth-child(14) {
+      background-color: #e5d8c2;
+    }
+
+    &:nth-child(2),
+    &:nth-child(9),
+    &:nth-child(12),
+    &:nth-child(15) {
+      background-color: #ba7957;
+    }
+
+    &:nth-child(3),
+    &:nth-child(10),
+    &:nth-child(13),
+    &:nth-child(16) {
+      background-color: #a9c6b9;
+    }
+
+    &:nth-child(4),
+    &:nth-child(6) {
+      background-color: #d3a745;
+    }
+
+    &:nth-child(5) {
+      background-color: #63949a;
+    }
+
+    .post__header,
+    .post__footer {
+      display: flex;
+
+      justify-content: space-between;
+
+      @extend %fontMicro;
+
+      .post__title {
+        display: flex;
+
+        flex-direction: column;
+
+        span:hover {
+          text-decoration: underline;
+        }
       }
     }
-  }
-}
 
-footer {
-  width: 100%;
+    .post__main {
+      display: flex;
 
-  height: 80%;
+      flex-direction: column;
 
-  display: flex;
+      justify-content: center;
 
-  flex-direction: column;
+      align-items: center;
 
-  justify-content: space-between;
+      width: 100%;
 
-  padding-bottom: 40px;
+      height: 100%;
 
-  p {
-    font-size: $fontMid;
+      position: absolute;
 
-    letter-spacing: 1px;
+      left: 0;
 
-    line-height: 1.5;
+      top: 0;
 
-    span {
-      @extend %tinyText;
-    }
+      .visible {
+        width: 100%;
 
-    a {
-      color: $black;
+        height: 100%;
 
-      &:hover {
-        font-style: italic;
+        display: flex;
+
+        flex-direction: column;
+
+        justify-content: center;
+
+        align-items: center;
+
+        ​ .post__img {
+          width: 50%;
+
+          height: 45%;
+
+          background: url("https://source.unsplash.com/random/") center/cover;
+        }
+
+        h3 {
+          @extend %fontRegular;
+        }
+      }
+
+      .invisible__wrapper {
+        display: flex;
+
+        justify-content: center;
+
+        align-items: center;
+
+        .invisible {
+          display: none;
+
+          width: 100%;
+
+          height: 100%;
+
+          ​ p {
+            @extend %fontRegular;
+          }
+        }
       }
     }
-  }
 
-  span {
-    font-size: $fontmic;
+    &:hover {
+      .post__main {
+        .visible {
+          display: none;
+        }
+
+        .invisible {
+          display: block;
+        }
+      }
+    }
+
+    &:hover:nth-child(2) {
+      background: url("https://source.unsplash.com/random/") center/cover;
+    }
   }
 }

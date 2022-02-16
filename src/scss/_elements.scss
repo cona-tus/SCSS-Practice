@@ -1,13 +1,51 @@
-%grid {
-  display: grid;
+%fontLarge {
+  font-family: "Staatliches", cursive;
 
-  grid-template-columns: 1fr 4fr 6fr 0.3fr;
+  font-weight: 400;
+
+  font-size: 40px;
+
+  text-transform: uppercase;
+
+  color: black;
 }
 
-%tinyText {
-  font-size: $fontmic;
+%fontMideum {
+  font-family: "Quicksand", sans-serif;
 
-  color: $red;
+  font-weight: 600;
 
-  letter-spacing: 1px;
+  font-size: 20px;
+
+  text-transform: uppercase;
+
+  color: black;
+
+  text-decoration: none;
+}
+
+%fontRegular {
+  font-family: "Quicksand", sans-serif;
+
+  font-weight: 300;
+
+  font-size: 16px;
+
+  color: black;
+
+  text-align: center;
+
+  padding: 20px;
+
+  line-height: 1.2;
+}
+
+%fontMicro {
+  font-family: "Quicksand", sans-serif;
+
+  font-weight: 300;
+
+  font-size: 14px;
+
+  color: black;
 }
