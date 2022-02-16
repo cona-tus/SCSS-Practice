@@ -1,0 +1,23 @@
+%btn {
+  text-decoration: none;
+
+  background-color: transparent;
+
+  color: inherit;
+
+  border: 0.5px solid rgba(0, 0, 0, 0.3);
+
+  padding: 10px 40px;
+
+  border-radius: 99px;
+
+  transition: background-color 0.2s linear;
+
+  width: 14vw;
+
+  &:hover {
+    background-color: black;
+
+    color: white;
+  }
+}
